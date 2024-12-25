@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is inside the div.
+  </div>
+  <script>
+    //Attempting to access a non-existent attribute
+    let myVar = document.getElementById('myDiv').getAttribute('nonExistent');
+    console.log(myVar); // Outputs null
+    //But if you try to use it as if it existed:
+    let myDiv = document.getElementById('myDiv');
+    myDiv.nonExistent.style.color='red'; //This will cause a TypeError
+  </script>
+</body>
+</html>
