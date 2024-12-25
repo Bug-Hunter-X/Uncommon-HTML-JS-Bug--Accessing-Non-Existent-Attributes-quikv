@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is inside the div.
+  </div>
+  <script>
+    let myDiv = document.getElementById('myDiv');
+    let attributeExists = myDiv.hasAttribute('nonExistent');
+    if(attributeExists){
+        let myVar = document.getElementById('myDiv').getAttribute('nonExistent');
+        console.log(myVar);
+    }else{
+        console.log('Attribute does not exist');
+    }
+    //Or even better, set a default value:
+    let myVar2 = document.getElementById('myDiv').getAttribute('nonExistent') || 'defaultValue';
+    console.log(myVar2); // Outputs defaultValue
+  </script>
+</body>
+</html>
